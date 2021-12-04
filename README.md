@@ -37,38 +37,42 @@ python auto_abstract.py --help
 ### Modifying Behaviour
 The program has a few arguments that can modify the behaviour of the algorithm.
 Default argument values are contained in [defaults.yaml](defaults.yaml)
-*Recursion Limit Arguments*
+
+**Recursion Limit Arguments**
 Splits that would result in a polygon under these thresholds are discarded.
 - --athresh: minimum area of a polygon, 
 - --rthresh: minimum ration of width/height of a polygon 
 The maximum number of iterations can also be specified by the --iterations argument.
 
-*Split Arguments*
+**Split Arguments**
 These argument modify how a polygon is split into sub-polygons.
 - --tdepth: only consider splitting into triangles after this depth
 - --rec_n: Number of ways to split a rectangle
 - --tri_n: Number of ways to split a triangle
 
-*Other Argument*
+**Other Argument**
 - --max_pixels: Downsample input image to reduce computation cost
 
 ## Examples
-*Controlling Polygon Size*
+**Controlling Polygon Size**
 ```
 python auto_abstract.py --image examples/input/lake.png --out examples/output/lake.png --athresh 0.01
 ```
 ![Input](examples/input/lake.png)
 ![Output](examples/output/lake.png)
-*Using Triangles*
+
+**Using Triangles**
 This works "best" when triangles are used on the last or second last iteration
 ```
 python auto_abstract.py --image examples/input/mountain.png --athresh 0.005 --iterations 5 --tdepth 4 --out examples/output/mountain.png
 ```
 ![Input](examples/input/mountain.png)
 ![Output](examples/output/mountain.png)
-*Multiple Splits*
+
+**Number of Splits**
+The number of splits at each iteration can be increased, giving the algorithm more options.
 ```
-python auto_abstract.py --image examples/input/beach.png --rec_n 20 --show --athresh 0.01
+python auto_abstract.py --image examples/input/beach.png --rec_n 20 --athresh 0.01 --out examples/output/beach.png
 ```
 ![Input](examples/input/beach.png)
 ![Output](examples/output/beach.png)
