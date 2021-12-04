@@ -1,0 +1,8 @@
+iterations: 5
+athresh: 0.1
+wthresh: 0.1
+rthresh: 0.01
+tdepth: 5
+rec_n: 5
+tri_n: 4
+max_pixels: 500000
