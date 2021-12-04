@@ -1,3 +1,4 @@
+# YAML file defining the default values for command-line arguments
 iterations: 5
 athresh: 0.1
 wthresh: 0.1
